@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.message {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+.user {
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
