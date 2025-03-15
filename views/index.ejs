@@ -9,14 +9,16 @@
   <body>
     <h1>Mini Message Board</h1>
 
-    <% messages.forEach(message => { %>
-    <div class="message">
-      <p class="user"><%= message.user %></p>
-      <p><%= message.text %></p>
-      <p class="date"><%= new Date(message.added).toLocaleString() %></p>
+    <div class="message-container">
+      <% messages.forEach((message, index) => { %>
+      <a class="message" href="/message/<%= index %>">
+        <p class="user"><%= message.user %></p>
+        <p class="text"><%= message.text %></p>
+        <p class="date"><%= new Date(message.added).toLocaleString() %></p>
+      </a>
+      <% }) %>
     </div>
-    <% }) %>
 
-    <a href="/new">Add a New Message</a>
+    <a href="/new" class="new-message">Add a New Message</a>
   </body>
 </html>

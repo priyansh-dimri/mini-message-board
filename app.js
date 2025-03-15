@@ -14,6 +14,17 @@ app.get("/", (req, res) => res.render("index", { messages }));
 
 app.get("/new", (req, res) => res.render("new"));
 
+app.get("/message/:id", (req, res) => {
+  const messageId = parseInt(req.params.id);
+
+  if (isNaN(messageId) || messageId < 0 || messageId >= messages.length) {
+    return res.status(404).send("Message not found.");
+  }
+
+  const message = messages[messageId];
+  res.render("message", { message });
+});
+
 app.post("/new", (req, res) => {
   const { user, text } = req.body;
 
